@@ -57,22 +57,22 @@
             </nav>
             <!--  navbar desktop -->
             <nav x-data="navbar()" class="hidden h-20 items-center justify-between bg-slate-800 px-10 font-mono lg:flex">
-                <span class="text-lg text-teal-400">./wesleysantos</span>
-                <ul class="flex space-x-8 text-sm">
+                <span class="font-mono text-2xl font-regular text-teal-400">./wesleysantos</span>
+                <ul class="flex space-x-8 font-mono text-sm font-regulars">
                     <template x-for="(entry, i) in entries">
                         <li>
-                            <a x-bind:href="entry.targetSection" class="whitespace-nowrap text-slate-300 hover:text-slate-200 active:text-slate-400">
-                                <span class="text-teal-400" x-text="'0' + (i + 1) + '. '"></span>
-                                <span x-text="entry.name"></span>
+                            <a x-bind:href="entry.targetSection" class="group whitespace-nowrap text-slate-300 outline-none">
+                                <span class="text-teal-400
+                                 group-hover:text-teal-300 group-active:text-teal-500" x-text="'0' + (i + 1) + '. '"></span>
+                                <span x-text="entry.name" class="group-hover:text-slate-200 group-active:text-slate-400"></span>
                             </a>
                         </li>
                     </template>
                 </ul>
-                <!-- <span class="lg:border lg:border-teal-400"></span>    -->
             </nav>
 
             <!-- Home Section-->
-            <section class="flex flex-col px-4 lg:flex-row-reverse lg:justify-center lg:px-10">
+            <section id="home" class="flex flex-col px-4 lg:flex-row-reverse lg:justify-center lg:px-10">
                 <!--Picture-->
                 <div class="flex justify-center lg:w-1/2 lg:items-center lg:justify-end lg:px-0">
                     <div class="h-[300px] w-[400px]">
@@ -135,7 +135,7 @@
             </section>
             <!-- About mobile and desktop-->
             <!--Title About-->
-            <section class="flex-col space-y-6 px-8 pt-20">
+            <section id="about" class="flex-col space-y-6 px-8 pt-20">
                 <h2 class="inline-flex h-10 w-full items-center space-x-3">
                     <span class="font-xl font-regular font-mono text-teal-400">02</span>
                     <span class="font-regular font-mono text-xl text-white">About</span>
@@ -181,7 +181,7 @@
                 </div>
             </section>
             <!-- Skills Section -->
-            <section x-data="skills" x-init="load()" class="flex-col space-y-8 px-8 pt-20">
+            <section id="skills" x-data="skills" x-init="load()" class="flex-col space-y-8 px-8 pt-20">
                 <h2 class="inline-flex h-10 w-full items-center space-x-3">
                     <span class="font-xl font-regular font-mono text-teal-400">03</span>
                     <span class="font-regular font-mono text-xl text-white">Skills</span>
@@ -217,7 +217,7 @@
                 </div>
             </section>
             <!--Experience Section -->
-            <section x-data="experience" class="px-4 mb-8 lg:px-8">
+            <section id="experience" x-data="experience" class="px-4 mb-8 lg:px-8">
                 <div class="flex flex-col mb-4">
                     <h2 class="inline-flex h-10 w-full items-center space-x-3">
                         <span class="font-xl font-regular font-mono text-teal-400">04</span>
