@@ -10,12 +10,12 @@
         <script src="js/skills.js"></script>
     </head>
 
-    <body class="h-full w-full bg-slate-800">
+    <body class="h-full w-full bg-slate-800 text-slate-300">
         <div class="min-h-screen">
             <!-- mobile navbar -->
             <nav x-data="navbar()" class="h-20 bg-slate-800 px-4 font-mono lg:hidden">
                 <div class="flex h-full items-center justify-between">
-                    <span class="text-lg-20px text-teal-400">./wesleysantos</span>
+                    <span class="font-regular font-mono text-xl text-teal-400">./wesleysantos</span>
                     <button @click="open = !open" class="text-slate-300">
                         <svg
                             x-show="!open"
@@ -45,8 +45,10 @@
                     <template x-for="(entry, i) in entries">
                         <li class="w-full">
                             <a
-                                x-bind:href="entry.targetSection" @click="open= false"
-                                class="block whitespace-nowrap p-4 text-slate-300 focus-within:bg-slate-900 hover:bg-slate-900 hover:text-slate-200 active:text-slate-400"
+                                x-bind:href="entry.targetSection"
+                                @click="open = false"
+                                class="block space-x-2.5 whitespace-nowrap p-4 text-slate-300 focus-within:bg-slate-900 hover:bg-slate-900 hover:text-slate-200 active:text-slate-400"
+                                @click="bg-slate-900"
                             >
                                 <span class="text-teal-400" x-text="'0' + (i + 1) + '. '"></span>
                                 <span x-text="entry.name"></span>
@@ -57,13 +59,12 @@
             </nav>
             <!--  navbar desktop -->
             <nav x-data="navbar()" class="hidden h-20 items-center justify-between bg-slate-800 px-10 font-mono lg:flex">
-                <span class="font-mono text-2xl font-regular text-teal-400">./wesleysantos</span>
-                <ul class="flex space-x-8 font-mono text-sm font-regulars">
+                <span class="font-regular font-mono text-2xl text-teal-400">./wesleysantos</span>
+                <ul class="flex space-x-8 text-sm">
                     <template x-for="(entry, i) in entries">
                         <li>
                             <a x-bind:href="entry.targetSection" class="group whitespace-nowrap text-slate-300 outline-none">
-                                <span class="text-teal-400
-                                 group-hover:text-teal-300 group-active:text-teal-500" x-text="'0' + (i + 1) + '. '"></span>
+                                <span class="text-teal-400 group-hover:text-teal-300 group-active:text-teal-500" x-text="'0' + (i + 1) + '. '"></span>
                                 <span x-text="entry.name" class="group-hover:text-slate-200 group-active:text-slate-400"></span>
                             </a>
                         </li>
@@ -72,55 +73,57 @@
             </nav>
 
             <!-- Home Section-->
-            <section id="home" class="flex flex-col px-4 lg:flex-row-reverse lg:justify-center lg:px-10">
+            <section id="home" class="flex flex-col px-4 pb-[60px] outline-none lg:flex-row-reverse lg:justify-center lg:border-t lg:px-10 lg:pb-16">
                 <!--Picture-->
                 <div class="flex justify-center lg:w-1/2 lg:items-center lg:justify-end lg:px-0">
                     <div class="h-[300px] w-[400px]">
-                        <img src="images/porti_pic.jpg" alt="port_img" class="object-cover" />
+                        <img src="Images/porti_pic.jpg" alt="port_img" class="object-cover" />
                     </div>
                 </div>
                 <!--Intro-->
-                <div class="mt-10 flex flex-col items-center space-y-5 lg:mt-0 lg:w-1/2 lg:items-start">
-                    <h2 class="text-mono font-regular text-teal-400">Hey, my name is</h2>
-                    <h2 class="font-regular whitespace-nowrap font-serif text-4xl text-slate-300 lg:text-6xl">Wesley dos Santos</h2>
-                    <p class="font-regular text-mono text-center text-lg text-slate-300 lg:text-left">
-                        I am a computer science student passionate about technology and design. I developed a particular interest in creating vibrating UI experiences. In the last months, I have been doing a series of qualifications to become a more specialized professional.
+                <div class="lg:mt-15 mt-10 flex flex-col items-center lg:w-1/2 lg:items-start">
+                    <h2 class="font-regular mb-5 font-mono text-base text-teal-400">Hey, my name is</h2>
+                    <h2 class="font-regular mb-5 whitespace-nowrap font-serif text-4xl lg:text-6xl">Wesley dos Santos</h2>
+                    <p class="font-regular mb-14 text-center font-serif text-xl lg:text-left">
+                        I am a computer scientist student passionate for technology and design. I developed a particular interest in creating
+                        vibrating UI experiences. In the last months I have been doing a series of qualifications to become a more specialize
+                        professional.
                     </p>
                     <a
-                 href="images/RESUME.pdf" target="_blank"
-                    class="inline-flex items-center gap-3 whitespace-nowrap rounded border border-teal-400 px-20 py-4 text-sm text-teal-400 hover:border-teal-300 hover:bg-slate-700 hover:text-teal-300 focus:border-teal-300 focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 focus:ring-offset-slate-800 active:border-teal-500 active:text-teal-500">
-                        <span > Download my resume </span>
-
-                        <div class="inline-flex h-3 w-3 items-center">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
+                        href="Images/Resume.pdf"
+                        target="_blank"
+                        class="font-regular group mb-9 inline-flex w-full items-center justify-center space-x-3 whitespace-nowrap rounded border border-teal-400 py-4 px-8 font-mono text-sm text-teal-400 hover:border-teal-300 hover:bg-slate-700 hover:text-teal-300 focus:border-teal-300 focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 focus:ring-offset-slate-800 active:border-teal-500 active:text-teal-500 lg:w-fit"
+                    >
+                        <span>Download my resume</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.75 8.625V9.9375C0.75 10.2856 0.888281 10.6194 1.13442 10.8656C1.38056 11.1117 1.7144 11.25 2.0625 11.25H9.9375C10.2856 11.25 10.6194 11.1117 10.8656 10.8656C11.1117 10.6194 11.25 10.2856 11.25 9.9375V8.625M8.625 6L6 8.625M6 8.625L3.375 6M6 8.625V0.75"
                                 stroke="currentColor"
-                                class="h-[0.875rem] w-[0.875rem]"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
-                                />
-                            </svg>
-                        </div>
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
                     </a>
                     <div>
                         <a
-                        href="https://www.youtube.com/shorts/A-nLozFIk_g" target="_blank"
-                        class="inline-flex items-center gap-4 to-white text-slate-400 hover:border-teal-300 focus:outline-none">
-                            <div class="group inline-flex items-center gap-4">
-                                <span class="rounded-full border border-slate-400 fill-slate-400 p-6 group-focus:bg-teal-400">
+                            href="https://www.youtube.com/shorts/A-nLozFIk_g"
+                            target="_blank"
+                            class="group inline-flex items-center gap-4 to-white text-slate-400"
+                        >
+                            <div
+                                class="inline-flex items-center gap-5 focus:outline-none group-hover:text-teal-300 group-focus:text-teal-400 group-active:text-teal-500"
+                            >
+                                <span
+                                    class="rounded-full border border-slate-400 fill-slate-400 p-5 group-hover:border-teal-300 group-hover:fill-teal-300 group-hover:text-teal-300 group-focus:border-teal-400 group-focus:fill-teal-400 group-focus:ring-2 group-focus:ring-teal-500 group-focus:ring-offset-2 group-focus:ring-offset-slate-800 group-active:border-teal-500 group-active:fill-teal-500 group-active:text-teal-500"
+                                >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill=""
                                         viewBox="0 0 24 24"
                                         stroke-width="1.5"
                                         stroke="currentColor"
-                                        class="h-6 w-6 group-focus:bg-teal-400"
+                                        class="h-6 w-6"
                                     >
                                         <path
                                             stroke-linecap="round"
@@ -137,54 +140,50 @@
             </section>
             <!-- About mobile and desktop-->
             <!--Title About-->
-            <section id="about" class="flex-col space-y-6 px-8 pt-20">
-                <h2 class="inline-flex h-10 w-full items-center space-x-3">
+            <section id="about" class="flex-col px-8">
+                <h2 class="inline-flex w-full items-center space-x-4 py-4 pt-12 pb-10 lg:pb-12">
                     <span class="font-xl font-regular font-mono text-teal-400">02</span>
                     <span class="font-regular font-mono text-xl text-white">About</span>
                     <span class="flex-grow border-spacing-3 border-t-2 border-dotted border-teal-600"></span>
                 </h2>
-                <div class="md:flex-col md:items-center md:space-y-10 lg:flex lg:flex-row-reverse lg:justify-end">
+                <div class="md:flex-col md:items-center md:space-y-10 lg:flex lg:flex-row-reverse">
                     <!--Boxes-->
-                    <div class="flex flex-row py-4 lg:w-1/2 lg:justify-end">
+                    <div class="mb-12 flex flex-row lg:w-1/2 lg:justify-end">
                         <svg class="w-[24rem] max-w-full" viewBox="0 0 384 424" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect class="h-[25rem] w-[22.5rem] fill-teal-400" x="24" y="24" />
                             <rect class="h-[25rem] w-[22.5rem] fill-slate-500" x="0" y="0" width="360" height="400" />
                         </svg>
                     </div>
                     <!--About me text-->
-                    <div class="font-regular text-mono space-y-5 text-lg text-slate-300 lg:w-1/2 lg:flex-col">
+                    <div class="font-regular text-mono space-y-5 text-lg text-slate-300 lg:w-1/2 lg:flex-col lg:align-top lg:text-base">
                         <p>
-                            Hello! I’m Wesley, and my passion is creating all sorts of things related to new technologies. I’m passionate about Web
-                            development and design.
+                            Hello! I’m Baptiste and my passion is creating all sorts of things related to new technologies. I’m passionate about Web
+                            development and I worked for the first time as a Front-End dev in 2018 at CAUE Du Nord.
                         </p>
 
                         <p>
-                            I’ve started university in 2021 at Ensign College on a <em class="text-teal-400"> Computer Science Program </em> and since
-                            then I’ve have been studying multiple technologies such as Java, JavaScript, Python, SQL, C++, HTML, CSS and a lot more. I
-                            also have a degree in Brazil in Electromechanis. So, my background in technology and project is very diverse.
-                        </p>
-                        <p>
-                            Even before finding myself in Computer Science, I was already inclined to technology. In 2015, during an international
-                            science fair, I received an award from Intel in Brazil, the Galileo's Award of Innovation. Intel was awarding the most
-                            innovative projects in technology, and
-                            <em class="text-teal-400"
-                                >I built a Printer of electronic circuits to help students in universities that could not afford to pay a professional
-                                company to design and print their projects</em
-                            >. I wanted to give others the same opportunities I had.. Since then, I have started seeing technology as a way to make
-                            our lives easier, more efficient, more accessible, and more enjoyable.
+                            I’ve started university in 2018 at Epitech Lille (school of ….) and since then I’ve had a lot of opportunities to work on
+                            various technologies such as React Native, Swift, VueJs, Unity, C++, C# and a lot more. I also have had the opportunity to
+                            work as a DevOps during my scholarship.
                         </p>
 
                         <p>
-                            And finally, this last semester, I have been <em class="text-teal-400"> improving </em> my programming skills to become a
-                            more qualified software engineer. For me, it is the best part of the day when I research new technologies and sit at my
-                            computer to learn.
+                            This year I had the opportunity to spend 6 month in California at <em class="text-teal-400">CSUSM</em> where my major was
+                            Computer Science. I ended this semester with the award of the <em class="text-teal-400">Outstanding studient</em> for my
+                            dedication and work in this university.
+                        </p>
+
+                        <p>
+                            And finally I started to <em class="text-teal-400"> stream </em> a part of what I do : my training, my projects and my
+                            ideas on Twitch. For me it’s a good way to share with other people my journey and maybe to change the way people can see
+                            tech jobs & life.
                         </p>
                     </div>
                 </div>
             </section>
             <!-- Skills Section -->
-            <section id="skills" x-data="skills" x-init="load()" class="flex-col space-y-8 px-8 pt-20">
-                <h2 class="inline-flex h-10 w-full items-center space-x-3">
+            <section id="skills" x-data="skills" x-init="load()" class="flex-col space-y-8 px-8 pb-10">
+                <h2 class="inline-flex w-full items-center space-x-4 py-4">
                     <span class="font-xl font-regular font-mono text-teal-400">03</span>
                     <span class="font-regular font-mono text-xl text-white">Skills</span>
                     <span class="flex-grow border-spacing-3 border-t-2 border-dotted border-teal-600"></span>
@@ -219,8 +218,8 @@
                 </div>
             </section>
             <!--Experience Section -->
-            <section id="experience" x-data="experience" class="px-4 mb-8 lg:px-8">
-                <div class="flex flex-col mb-4">
+            <section id="experience" x-data="experience" class="mb-8 px-4 lg:px-8">
+                <div class="mb-4 flex flex-col">
                     <h2 class="inline-flex h-10 w-full items-center space-x-3">
                         <span class="font-xl font-regular font-mono text-teal-400">04</span>
                         <span class="font-regular font-mono text-xl text-white">Experience</span>
@@ -246,18 +245,23 @@
 
                     <div>
                         <div class="mb-4 gap-1">
-                            <h1 id="job_title" class="text-mono font-regular text-lg text-slate-200">Global Service Department - Tech Support Specialist</h1>
+                            <h1 id="job_title" class="text-mono font-regular text-lg text-slate-200">
+                                Global Service Department - Tech Support Specialist
+                            </h1>
                             <h2 id="date" class="text-mono font-regular text-sm text-slate-400">02/2022</h2>
                         </div>
-                        <div class="gap-2 mb-8">
+                        <div class="mb-8 gap-2">
                             <p id="decription" class="text-mono font-regular text-base text-slate-300">
-                                Communicated and provided tech support for members and employees of the organization with speakers of <em class="text-teal-400"> English or Portuguese</em> around the World.
+                                Communicated and provided tech support for members and employees of the organization with speakers of
+                                <em class="text-teal-400"> English or Portuguese</em> around the World.
                             </p>
-                            <p class="text-mono font-regular text-base text-slate-300">Worked with MAC OS, Microsoft OS, Microsoft Systems, Networking Systems, and Azure Management.</p>
+                            <p class="text-mono font-regular text-base text-slate-300">
+                                Worked with MAC OS, Microsoft OS, Microsoft Systems, Networking Systems, and Azure Management.
+                            </p>
                         </div>
                     </div>
                 </div>
-                 <div class="flex gap-4">
+                <div class="flex gap-4">
                     <div class="flex flex-col items-center">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="4" y="12.3333" width="11.7851" height="11.7851" transform="rotate(-45 4 12.3333)" fill="#8892C0" />
@@ -281,11 +285,55 @@
                         </div>
                         <div class="gap-2">
                             <p id="decription" class="text-mono font-regular text-base text-slate-300">
-                                Worked as a supervisor over a team of 20 employees in the sales division providing weekly training and strategical planning through <em class="text-teal-400">SMART goals</em>, operated as a <em class="text-teal-400"> KPI analyst</em> and quality manager.
+                                Worked as a supervisor over a team of 20 employees in the sales division providing weekly training and strategical
+                                planning through <em class="text-teal-400">SMART goals</em>, operated as a
+                                <em class="text-teal-400"> KPI analyst</em> and quality manager.
                             </p>
                             <p class="text-mono font-regular text-base text-slate-300">Worked with Tableu, Excel, Google Analytics and SQL</p>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section id="contact" class="flex-col items-center justify-center border-t border-teal-400 px-8 outline-none">
+                <div class="mt-16 mb-4 space-y-2 text-center">
+                    <h1 class="font-regular font-serif text-4xl lg:text-6xl">Let’s work <em class="text-teal-400">together</em>!</h1>
+                    <h2 class="font-regular font-mono text-xl">wdsantoslds@outlook.com</h2>
+                    <h2 class="font-regular font-mono text-lg">Based in Orem, UT</h2>
+                </div>
+                <div class="mb-16 flex items-center justify-center space-x-6">
+                    <a href="https://github.com/wdsantos1998" target="_blank">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M24 0C10.7448 0 0 11.0158 0 24.6087C0 35.4796 6.876 44.7045 16.4136 47.9572C17.6136 48.1832 18.0504 47.4241 18.0504 46.7706C18.0504 46.1884 18.0312 44.6382 18.0192 42.5868C11.3424 44.0731 9.9336 39.2875 9.9336 39.2875C8.844 36.4426 7.2696 35.686 7.2696 35.686C5.0904 34.1628 7.4352 34.1923 7.4352 34.1923C9.8424 34.3643 11.1096 36.7276 11.1096 36.7276C13.2504 40.4864 16.728 39.4005 18.0936 38.7716C18.3144 37.1821 18.9336 36.0987 19.62 35.4845C14.292 34.863 8.688 32.7502 8.688 23.3214C8.688 20.6363 9.624 18.4375 11.1576 16.7178C10.9104 16.0963 10.0872 13.5929 11.3928 10.2076C11.3928 10.2076 13.4088 9.54427 17.9928 12.7281C19.9506 12.1816 21.9707 11.9032 24 11.9002C26.04 11.9101 28.092 12.1828 30.0096 12.7281C34.5912 9.54427 36.6024 10.2051 36.6024 10.2051C37.9128 13.5929 37.0872 16.0963 36.8424 16.7178C38.3784 18.4375 39.3096 20.6363 39.3096 23.3214C39.3096 32.7748 33.696 34.8556 28.3512 35.4649C29.2128 36.224 29.9784 37.725 29.9784 40.022C29.9784 43.3091 29.9496 45.9648 29.9496 46.7706C29.9496 47.429 30.3816 48.1955 31.6008 47.9547C36.3799 46.3139 40.5344 43.1772 43.4772 38.9879C46.4199 34.7986 48.002 29.7686 48 24.6087C48 11.0158 37.2528 0 24 0Z"
+                                fill="#CBD5E1"
+                            />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/wesley-dos-santos-0316341b0/" target="_blank">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1526_181)">
+                                <path
+                                    d="M24 0C10.7451 0 0 10.7451 0 24C0 37.2548 10.7451 47.9999 24 47.9999C37.2548 47.9999 48 37.2548 48 24C47.9999 10.7451 37.2547 0 24 0ZM17.5967 35.6028H12.3273V18.5788H17.5967V35.6028ZM14.9369 16.3494C13.216 16.3494 11.8208 14.9429 11.8208 13.2081C11.8208 11.4732 13.2161 10.0668 14.9369 10.0668C16.6576 10.0668 18.0528 11.4732 18.0528 13.2081C18.0529 14.943 16.6577 16.3494 14.9369 16.3494ZM37.3439 35.6028H32.1V26.6666C32.1 24.2157 31.169 22.8475 29.231 22.8475C27.1218 22.8475 26.0199 24.2725 26.0199 26.6666V35.6028H20.9659V18.5788H26.0199V20.8716C26.0199 20.8716 27.5402 18.0595 31.15 18.0595C34.7599 18.0595 37.344 20.2637 37.344 24.8235L37.3439 35.6028Z"
+                                    fill="#CBD5E1"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1526_181">
+                                    <rect width="48" height="48" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/elonmusk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+                        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.838 35.8788C30.4414 35.8788 39.523 22.1222 39.523 10.1938C39.523 9.80221 39.523 9.41281 39.4966 9.02781C41.2636 7.74857 42.7886 6.16476 44 4.35061C42.3523 5.08102 40.6044 5.56009 38.8146 5.77181C40.6992 4.64335 42.1097 2.86858 42.7834 0.777814C41.0117 1.82916 39.0736 2.57022 37.0524 2.96901C35.6915 1.5209 33.8911 0.56185 31.93 0.240365C29.9689 -0.0811203 27.9565 0.252892 26.2045 1.19069C24.4524 2.12848 23.0584 3.61774 22.2382 5.42787C21.4181 7.238 21.2176 9.26802 21.6678 11.2036C18.0787 11.0237 14.5675 10.0911 11.3622 8.4663C8.15691 6.84148 5.32912 4.56077 3.0624 1.77221C1.9081 3.75926 1.5545 6.11154 2.07358 8.35013C2.59266 10.5887 3.94541 12.5453 5.8564 13.8216C4.42037 13.78 3.01539 13.3937 1.76 12.6952V12.8096C1.76086 14.8937 2.48247 16.9133 3.80247 18.526C5.12248 20.1387 6.95963 21.2453 9.0024 21.658C7.67318 22.0204 6.27857 22.0731 4.9258 21.812C5.50255 23.6061 6.62569 25.1749 8.13808 26.2992C9.65047 27.4234 11.4765 28.0468 13.3606 28.082C11.4887 29.5529 9.34513 30.6402 7.0526 31.282C4.76007 31.9237 2.36351 32.1072 0 31.822C4.12853 34.4715 8.93241 35.8768 13.838 35.87"
+                                fill="#CBD5E1"
+                            />
+                        </svg>
+                    </a>
                 </div>
             </section>
         </div>
