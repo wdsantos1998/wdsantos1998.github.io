@@ -1,0 +1,12 @@
+  <p>
+                            I am a computer science student with a keen interest in design and creating visually engaging UI experiences. I have a passion for developing software that not only functions well but also captures the user's attention with its aesthetics. I love to experiment different color schemes, fonts, and layouts to find the perfect combination that makes an application or website pop.
+                        </p>
+
+                        <p>
+                           As someone who has always participated in science fairs, I have a natural curiosity about how things work and an eagerness to share my knowledge with others. I enjoy exploring new ideas and finding innovative solutions to problems, and I love to apply this same mindset to your programming projects.
+                        </p>
+
+                        <p>
+                            Overall, I am a creative, innovative, and driven individual who is constantly pushing my boundaries of what is possible in the field of computer science.
+
+                        </p>
