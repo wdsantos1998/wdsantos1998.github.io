@@ -2,11 +2,11 @@ const navbar = function () {
     return {
         open: false,
         entries: [
-            { name: 'home', targetSection: '#home' },
-            { name: 'about', targetSection: '#about' },
-            { name: 'skills', targetSection: '#skills' },
-            { name: 'experience', targetSection: '#experience' },
-            { name: 'contact', targetSection: '#contact' },
+            { name: 'Home', targetSection: '#home' },
+            { name: 'About', targetSection: '#about' },
+            { name: 'Skills', targetSection: '#skills' },
+            { name: 'Experience', targetSection: '#experience' },
+            { name: 'Contact', targetSection: '#contact' },
         ],
     };
 };
