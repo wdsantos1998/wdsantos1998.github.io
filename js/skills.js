@@ -44,43 +44,43 @@ const skills = function () {
             },
 
         ],
-        async load() {
-            try {
-                const res = await fetch('https://nextjs-wakatime-tool.vercel.app/api/wakatime/WesleyDSantos', { method: 'GET' });
+    //     async load() {
+    //         try {
+    //             const res = await fetch('https://nextjs-wakatime-tool.vercel.app/api/wakatime/WesleyDSantos', { method: 'GET' });
 
-                // Ensure the response was successful
-                if (!res.ok) {
-                    console.error("Error fetching data:", res.status, res.statusText);
-                    return;
-                }
+    //             // Ensure the response was successful
+    //             if (!res.ok) {
+    //                 console.error("Error fetching data:", res.status, res.statusText);
+    //                 return;
+    //             }
 
-                const stats = await res.json();
-                console.log("This is what I am receiving", JSON.stringify(stats));
+    //             const stats = await res.json();
+    //             console.log("This is what I am receiving", JSON.stringify(stats));
 
-                // Extract languages directly, as this is what the API returns
-                const languages = stats.languages;
-                const languagesIWant = ['HTML', 'CSS', 'JavaScript'];
+    //             // Extract languages directly, as this is what the API returns
+    //             const languages = stats.languages;
+    //             const languagesIWant = ['HTML', 'CSS', 'JavaScript'];
 
-                const languageStatsList = languages.filter(l => languagesIWant.includes(l.name));
+    //             const languageStatsList = languages.filter(l => languagesIWant.includes(l.name));
 
-                for (let i = 0; i < languageStatsList.length; i++) {
-                    const languageStats = languageStatsList[i];
-                    const targetLanguage = this.languages.find(l => l.name === languageStats.name);
+    //             for (let i = 0; i < languageStatsList.length; i++) {
+    //                 const languageStats = languageStatsList[i];
+    //                 const targetLanguage = this.languages.find(l => l.name === languageStats.name);
 
-                    // Only set properties if targetLanguage exists
-                    if (targetLanguage) {
-                        targetLanguage.hours = languageStats.hours;
-                        targetLanguage.decimal = languageStats.decimal;
-                    }
-                }
-            } catch (error) {
-                console.error("Error in load function:", error);
-            }
-        },
-        progress(language) {
-            const percentage = (language.decimal / 320) * 100;
-            return `${percentage}%`;
-        },
+    //                 // Only set properties if targetLanguage exists
+    //                 if (targetLanguage) {
+    //                     targetLanguage.hours = languageStats.hours;
+    //                     targetLanguage.decimal = languageStats.decimal;
+    //                 }
+    //             }
+    //         } catch (error) {
+    //             console.error("Error in load function:", error);
+    //         }
+    //     },
+    //     progress(language) {
+    //         const percentage = (language.decimal / 320) * 100;
+    //         return `${percentage}%`;
+    //     },
     };
 };
 
