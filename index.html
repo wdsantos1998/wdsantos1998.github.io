@@ -75,7 +75,7 @@
             <!-- Home Section-->
             <section id="home" class="flex flex-col px-4 pb-[60px] outline-none lg:flex-row-reverse lg:justify-center lg:px-10 lg:pb-16">
                 <!--Picture-->
-                <div class="flex justify-center lg:w-1/2 lg:items-center lg:justify-end lg:px-0">
+                <div class="flex justify-center lg:w-1/2 lg:items-center lg:justify-end lg:px-0 mb-8">
                     <div class="h-[300px] w-[400px] border-0 rounded-full">
                         <img src="./images/profile_pic.jpg" alt="port_img" class="object-cover" />
                     </div>
@@ -84,7 +84,7 @@
                 <div class="lg:mt-15 mt-10 flex flex-col items-center lg:w-1/2 lg:items-start">
                     <h2 class="font-regular mb-5 font-mono text-base text-teal-400">Hey, my name is</h2>
                     <h2 class="font-regular mb-5 whitespace-nowrap font-serif text-4xl lg:text-6xl">Wesley dos Santos</h2>
-                    <p class="font-regular mb-14 text-center font-serif text-xl lg:text-left">
+                    <p class="font-regular text-mono text-lg text-slate-300 mb-8">
                        I am a Computer Science student with over two years of experience in software development, driven by a passion for technology and creating dynamic, engaging user interfaces. I have a keen interest in building efficient and scalable solutions, and I have acquired many skills through self-teaching, hands-on experience, and professional work. I have worked extensively with both front-end and back-end technologies, including Vue.js, Kotlinx.html, Neo4j, PostgreSQL, Google APIs, Bugsnag, Ktor, and more.
                     </p>
                     <a
@@ -103,36 +103,7 @@
                             />
                         </svg>
                     </a>
-                    <div>
-                        <a
-                            href="https://www.youtube.com/shorts/A-nLozFIk_g"
-                            target="_blank"
-                            class="group outline-none inline-flex items-center gap-4 to-white text-slate-400"
-                        >
-                            <div
-                                class="inline-flex items-center gap-5 focus:outline-none group-hover:text-teal-300 group-focus:text-teal-400 group-active:text-teal-500"
-                            >
-                                <span
-                                    class="rounded-full border border-slate-400 fill-slate-400 p-5 group-hover:border-teal-300 group-hover:fill-teal-300 group-hover:text-teal-300 group-focus:border-teal-400 group-focus:fill-teal-400 group-focus:ring-2 group-focus:ring-teal-500 group-focus:ring-offset-2 group-focus:ring-offset-slate-800 group-active:border-teal-500 group-active:fill-teal-500 group-active:text-teal-500"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill=""
-                                        viewBox="0 0 24 24"
-                                        stroke-width="1.5"
-                                        stroke="currentColor"
-                                        class="h-6 w-6"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
-                                        />
-                                    </svg>
-                                </span>
-                                <span>Watch video</span>
-                            </div>
-                        </a>
+</a>
                     </div>
                 </div>
             </section>
@@ -155,7 +126,7 @@
                     <!--About me text-->
                     <div class="font-regular text-mono space-y-5 text-lg text-slate-300 lg:w-1/2 lg:flex-col lg:align-top lg:text-base">
                        <p>
-                            I am a computer science student with a keen interest in design and creating visually engaging UI experiences. I have a passion for developing software that not only functions well but also captures the user's attention with its aesthetics. I love to experiment different color schemes, fonts, and layouts to find the perfect combination that makes an application or website pop.
+                            I have a passion for developing software that not only functions well but also captures the user's attention with its aesthetics. I love to experiment different color schemes, fonts, and layouts to find the perfect combination that makes an application or website pop.
                         </p>
 
                         <p>
@@ -176,10 +147,9 @@
                     <span class="font-regular font-mono text-xl text-white">Skills</span>
                     <span class="flex-grow border-spacing-3 border-t-2 border-dotted border-teal-600"></span>
                 </h2>
-                <div class="font-regular hidden font-mono text-xl text-slate-300 lg:block">
+                <div class="font-regular text-mono space-y-5 text-lg text-slate-300  lg:text-base">
                     <p>
-                        Welcome to the fun zone! Here, you'll find the skills that I've been improving, especially for this project. From HTML to CSS,
-                        and JavaScript. The hours are being retrieved from the <em class="text-teal-400">WAKATIME</em>.
+                        Welcome to the fun zone! Here, you'll find the skills that I've been improving.
                     </p>
                 </div>
                 <div class="flex flex-col flex-wrap items-center gap-8 pb-20 md:flex-row md:justify-start">
@@ -193,14 +163,6 @@
                                 <h3 class="text-2xl text-slate-100" x-text="language.name">Language name</h3>
                                 <p class="text-sm" x-text="language.description">description</p>
                             </div>
-                            <div class="flex flex-col gap-4 pt-8">
-                                <div class="h-8 bg-slate-700">
-                                    <div class="h-8 bg-teal-700" :style="`width:${progress(language)}`"></div>
-                                </div>
-                                <div class="flex flex-row items-center">
-                                    <span class="text-4xl" x-text="language.hours">40h</span><span class="text-slate-500">/1,000</span>
-                                </div>
-                            </div>
                         </div>
                     </template>
                 </div>
@@ -213,6 +175,40 @@
                         <span class="font-regular font-mono text-xl text-white">Experience</span>
                         <span class="flex-grow border-spacing-3 border-t-2 border-dotted border-teal-600"></span>
                     </h2>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="12.3333" width="11.7851" height="11.7851" transform="rotate(-45 4 12.3333)" fill="#8892C0" />
+                            <rect
+                                x="1.41421"
+                                y="12.5"
+                                width="15.6777"
+                                height="15.6777"
+                                transform="rotate(-45 1.41421 12.5)"
+                                stroke="#64FFDA"
+                                stroke-width="2"
+                            />
+                        </svg>
+                        <span class="border-left flex-grow border-spacing-3 border-l-2 border-dotted border-teal-600"></span>
+                    </div>
+
+                    <div>
+                        <div class="mb-4 gap-1">
+                            <h1 id="job_title" class="text-mono font-regular text-lg text-slate-200">
+                                Gadzoom, Inc - Software Developer
+                            </h1>
+                            <h2 id="date" class="text-mono font-regular text-sm text-slate-400">05/2023 - Current Position</h2>
+                        </div>
+                        <div class="mb-8 gap-2">
+                            <p id="decription" class="text-mono font-regular text-base text-slate-300">
+                               Implemented multiple features that <em class="text-teal-400"> enhanced service quality </em>  and boosted overall efficiency.
+                            </p>
+                            <p class="text-mono font-regular text-base text-slate-300">
+                                Worked extensively with  <em class="text-teal-400">front-end and back-end </em> technologies such as Vue.js, Kotlinx.html, Neo4j, PostgreSQL, Google APIs, Bugsnag, Ktor, and others across various projects.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex gap-4">
                     <div class="flex flex-col items-center">
@@ -249,6 +245,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="flex gap-4">
                     <div class="flex flex-col items-center">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
